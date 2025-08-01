@@ -41,7 +41,7 @@ export default function Portfolio() {
       title: t("project1"),
       description: t("project1Description"),
       image: project1,
-      tech: ["React", "Tailwind CSS", "Reducx", "Node.js"],
+      tech: ["React", "Tailwind CSS", "Redux", "Node.js"],
       category: "Web Development",
       link: "https://react-vite-comfy-store-v2.netlify.app/",
       github: ""

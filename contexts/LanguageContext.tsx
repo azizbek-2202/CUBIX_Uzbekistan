@@ -21,7 +21,7 @@ const translations = {
     contact: "Contact",
 
     // Hero Section
-    heroTitle: "Welcome to CUBIX",
+    heroTitle: "Welcome to KUBIX",
     heroSubtitle:
       "We create innovative web and mobile applications that turn your business ideas into reality using cutting-edge technology and modern design.",
     getInTouch: "Get In Touch",
@@ -72,7 +72,7 @@ const translations = {
     teamTitle: "Our Team",
     teamDescription: "Meet the talented individuals who make Kubix a leader in digital innovation.",
     ceoFounder: "CEO & Founder",
-    ceoFounderBio: "A promising leader and Sineor FrontEnd developer with over 5 years of experience in the technology industry",
+    ceoFounderBio: "A promising leader and Middle FrontEnd developer with over 5 years of experience in the technology industry",
     cto: "CTO",
     ctoBio: "Technical expert specializing in scalable architectures",
     leadDesigner: "Lead Designer",
@@ -167,7 +167,7 @@ const translations = {
     contact: "Aloqa",
 
     // Hero Section
-    heroTitle: "Xush kelibsiz CUBIX ga",
+    heroTitle: "Xush kelibsiz KUBIX ga",
     heroSubtitle:
       "Biz ilg'or texnologiyalar va zamonaviy dizayn yordamida biznes g'oyalaringizni haqiqatga aylantiradigan innovatsion veb va mobil ilovalarni yaratamiz.",
     getInTouch: "Bog'lanish",
@@ -219,13 +219,13 @@ const translations = {
     teamTitle: "Bizning Jamoa",
     teamDescription: "Kubixni raqamli innovatsiya sohasida yetakchi qiladigan iqtidorli shaxslar bilan tanishing.",
     ceoFounder: "Bosh direktor va Asoschisi",
-    ceoFounderBio: "Texnologiya sohasida 5 yildan ortiq tajribaga ega istiqbolli yetakchi va Sineor FrontEnd dasturchisi",
+    ceoFounderBio: "Texnologiya sohasida 5 yildan ortiq tajribaga ega istiqbolli yetakchi va Middle FrontEnd dasturchisi",
     uxDeveloper: "Ux/Ui Dasturchi",
     uxDeveloperBio: "Foydalanuvchi tajribasini yaxshilashga qaratilgan innovatsion dizayn yechimlarini ishlab chiqishga ixtisoslashgan.",
     leadDesigner: "Bosh dizayner",
     leadDesignerBio: "Foydalanuvchi tajribasiga ishtiyoqi bor ijodiy dizayner",
     fullStackDeveloper: "Full Stack Dasturchi",
-    fullStackDeveloperBio: "Zamonaviy freymvorklarda tajribaga ega full-stack dasturchi",
+    fullStackDeveloperBio: "Zamonaviy frameworklarda tajribaga ega full-stack dasturchi",
     backendDeveloper: "Backend Dasturchi",
     backendDeveloperBio: "Zamonaviy backend texnologiyalarida tajribaga ega dasturchi",
     projectManager: "Loyiha menejeri",
@@ -315,7 +315,7 @@ const translations = {
     contact: "Контакты",
 
     // Hero Section
-    heroTitle: "Добро пожаловать в CUBIX",
+    heroTitle: "Добро пожаловать в KUBIX",
     heroSubtitle:
       "Мы создаем инновационные веб- и мобильные приложения, которые воплощают ваши бизнес-идеи в реальность, используя передовые технологии и современный дизайн.",
     getInTouch: "Связаться",
@@ -366,7 +366,7 @@ const translations = {
     teamTitle: "Наша Команда",
     teamDescription: "Познакомьтесь с талантливыми людьми, которые делают Kubix лидером в области цифровых инноваций.",
     ceoFounder: "Генеральный директор и основатель",
-    ceoFounderBio: "Перспективный лидер и ведущий FrontEnd-разработчик с более чем 5-летним опытом работы в технологической отрасли.",
+    ceoFounderBio: "Перспективный лидер и Middle FrontEnd-разработчик с более чем 5-летним опытом работы в технологической отрасли.",
     cto: "Технический директор",
     ctoBio: "Технический эксперт, специализирующийся на масштабируемых архитектурах",
     leadDesigner: "Ведущий дизайнер",

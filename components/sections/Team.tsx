@@ -68,13 +68,13 @@ export default function Team() {
       },
     },
     {
-      name: "Nasimxonov Saidnur",
+      name: "Saidnurmuhammadulloxon Nasimxonov",
       position: t("backendDeveloper"),
       image: backend ? backend : "/placeholder.svg?height=300&width=300",
       bio: t("backendDeveloperBio"),
       social: {
         linkedin: "https://www.linkedin.com/in/nasimxonov-saidnurmuhammadulloxon",
-        facebook: "#",
+        facebook: "https://www.facebook.com/share/1EZgVoM8BE/",
         github: "https://github.com/nasimxonov",
       },
     },
@@ -91,12 +91,12 @@ export default function Team() {
       },
     },
     {
-      name: "Shoxruh Valiyev",
+      name: "Shohruh Valiyev",
       position: t("projectManager"),
       image: projectManager ? projectManager : "/placeholder.svg?height=300&width=300",
       bio: t("projectManagerBio"),
       social: {
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/valiyev-shohruhbek-356345378/",
         facebook: "#",
         github: "https://github.com/ValiyevShohruhbek",
       },
@@ -130,24 +130,24 @@ export default function Team() {
           {team.map((member, index) => (
             <div
               key={member.name}
-              className={`group bg-gradient-card rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              className={`relative group bg-gradient-card shadow-sm rounded-2xl p-8 text-center hover:text-white hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="relative mb-6">
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r to-green-400 from-green-700 opacity-0 group-hover:opacity-30 dark:group-hover:opacity-60 transition-opacity duration-300"></div>
+              <div className="mb-6">
                 <Image
                   src={member.image || "/placeholder.svg"}
                   width={128}
                   height={128}
                   alt={member.name}
-                  className="w-32 h-32 rounded-full mx-auto object-cover shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+                  className="w-32 h-32 rounded-full mx-auto object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{member.name}</h3>
-              <p className="text-blue-600 dark:text-blue-400 font-semibold mb-3">{member.position}</p>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">{member.bio}</p>
-              <div className="flex justify-center gap-4">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:opacity-90">{member.name}</h3>
+              <p className="text-blue-600 dark:text-blue-400 font-semibold mb-3 group-hover:opacity-90">{member.position}</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed group-hover:opacity-90">{member.bio}</p>
+              <div className="flex justify-center gap-4 group-hover:opacity-90 opacity-90 transition-opacity duration-300">
                 <a
                   href={member.social.linkedin}
                   target="_blank"

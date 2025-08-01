@@ -11,6 +11,7 @@ import Logo from "@/public/img/kubix-logo.png"
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState(false)
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
   const { language, setLanguage, t } = useLanguage()
@@ -62,26 +63,32 @@ export default function Header() {
     console.log("Theme changed to:", newTheme)
   }
 
+  const handleClick = (langCode: string) => {
+    setLanguage(langCode as any)
+    setActiveSection(false)
+  }
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-200/20 dark:border-gray-700/20"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-200/20 dark:border-gray-700/20"
+        : "bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <Image
-              src={Logo}
-              alt="Kubix Logo"
-              width={380}
-              height={160}
-              className="h-28 w-auto object-contain"
-              priority
-            />
+            <a href="/">
+              <Image
+                src={Logo}
+                alt="Kubix Logo"
+                width={380}
+                height={160}
+                className="h-28 w-auto object-contain"
+                priority
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -90,12 +97,11 @@ export default function Header() {
               <button
                 key={item.key}
                 onClick={() => scrollToSection(item.href)}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400 relative group ${
-                  isScrolled ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-blue-200"
-                }`}
+                className={`text-sm font-medium transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400 relative group ${isScrolled ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-blue-200"
+                  }`}
               >
                 {t(item.key)}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1  w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
           </nav>
@@ -107,27 +113,26 @@ export default function Header() {
               <Button
                 variant="ghost"
                 size="sm"
-                className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 ${
-                  isScrolled
-                    ? "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                    : "text-white hover:bg-white/10"
-                }`}
+                onClick={() => setActiveSection(!activeSection)}
+                className={`flex items-center space-x-2 px-3 py-2 rounded-xl transition-all duration-300 ${isScrolled
+                  ? "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  : "text-white hover:text-white hover:bg-white/10"
+                  }`}
               >
                 <Globe className="w-4 h-4" />
                 <span className="text-sm font-medium">
                   {languages.find((lang) => lang.code === language)?.name || "English"}
                 </span>
               </Button>
-              <div className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+              <div className={`absolute right-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 opacity-0 group-hover:opacity-100 ${activeSection ? "visible" : "invisible"} transition-all duration-300 z-50 overflow-hidden`}>
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
-                    onClick={() => handleLanguageChange(lang.code)}
-                    className={`w-full px-4 py-3 text-left text-sm hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors duration-200 ${
-                      language === lang.code
-                        ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
-                        : "text-gray-700 dark:text-gray-300"
-                    }`}
+                    onClick={() => handleClick(lang.code)}
+                    className={`w-full px-4 py-3 text-left text-sm hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center space-x-3 transition-colors duration-200 ${language === lang.code
+                      ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
+                      : "text-gray-700 dark:text-gray-300"
+                      }`}
                   >
                     <span className="text-lg">{lang.flag}</span>
                     <span className="font-medium">{lang.name}</span>
@@ -142,11 +147,10 @@ export default function Header() {
                 variant="ghost"
                 size="sm"
                 onClick={handleThemeToggle}
-                className={`p-2 rounded-lg transition-all duration-300 ${
-                  isScrolled
-                    ? "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
-                    : "text-white hover:bg-white/10"
-                }`}
+                className={`p-2 rounded-lg transition-all duration-300 ${isScrolled
+                  ? "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  : "text-white hover:bg-white/10"
+                  }`}
               >
                 {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </Button>
@@ -196,11 +200,10 @@ export default function Header() {
                       <button
                         key={lang.code}
                         onClick={() => handleLanguageChange(lang.code)}
-                        className={`px-3 py-2 rounded-lg text-sm transition-colors duration-300 flex items-center space-x-2 ${
-                          language === lang.code
-                            ? "bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
-                            : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
-                        }`}
+                        className={`px-3 py-2 rounded-lg text-sm transition-colors duration-300 flex items-center space-x-2 ${language === lang.code
+                          ? "bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
+                          : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                          }`}
                       >
                         <span>{lang.flag}</span>
                         <span className="font-medium">{lang.name}</span>
