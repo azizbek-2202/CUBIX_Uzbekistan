@@ -8,7 +8,7 @@ import direktor from "@/public/img/Direktor.jpg"
 import fullStack from "@/public/img/FullStack.jpg"
 import designer from "@/public/img/Azimjon.jpg"
 import backend from "@/public/img/saidnur.jpg"
-import ux from "@/public/img/hakimov.jpg"
+import figma from "@/public/img/hakimov.jpg"
 import projectManager from "@/public/img/shohruh.jpg"
 
 export default function Team() {
@@ -81,7 +81,7 @@ export default function Team() {
     {
       name: "Jahongir Muhammedov",
       position: t("uxDeveloper"),
-      image: ux ? ux : "/placeholder.svg?height=300&width=300",
+      image: figma ? figma : "/placeholder.svg?height=300&width=300",
       bio: t("uxDeveloperBio"),
       social: {
         linkedin: "https://www.linkedin.com/in/jahongir-muhammedov-8b6a1b1b2/",
