@@ -8,7 +8,7 @@ import direktor from "@/public/img/Direktor.jpg"
 import fullStack from "@/public/img/FullStack.jpg"
 import designer from "@/public/img/Azimjon.jpg"
 import backend from "@/public/img/saidnur.jpg"
-import figma from "@/public/img/hakimov.jpg"
+import figma from "@/public/img/rasm.jpg"
 import projectManager from "@/public/img/shohruh.jpg"
 
 export default function Team() {
