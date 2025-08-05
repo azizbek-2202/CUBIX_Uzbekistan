@@ -75,7 +75,7 @@ export default function Header() {
         : "bg-transparent"
         }`}
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto lg:px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
@@ -97,11 +97,11 @@ export default function Header() {
               <button
                 key={item.key}
                 onClick={() => scrollToSection(item.href)}
-                className={`text-sm font-medium transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400 relative group ${isScrolled ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-blue-200"
+                className={`text-sm flex flex-col pb-2 mt-2 font-medium transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400 relative group ${isScrolled ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-blue-200"
                   }`}
               >
                 {t(item.key)}
-                <span className="absolute -bottom-1  w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-1  w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
           </nav>
@@ -147,7 +147,7 @@ export default function Header() {
                 variant="ghost"
                 size="sm"
                 onClick={handleThemeToggle}
-                className={`p-2 rounded-lg transition-all duration-300 ${isScrolled
+                className={`p-2 rounded-xl transition-all duration-300 ${isScrolled
                   ? "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
                   : "text-white hover:bg-white/10"
                   }`}
@@ -168,17 +168,17 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
-            size="sm"
+            size="lg"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`lg:hidden p-2 ${isScrolled ? "text-gray-700 dark:text-gray-300" : "text-white"}`}
+            className='lg:hidden'
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="w-10 h-10 text-white dark:text-gray-300" /> : <Menu className="w-10 h-10 text-white dark:text-gray-300" />}
           </Button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-xl rounded-b-xl mx-4">
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-xl rounded-b-xl mx-4 mr-9">
             <div className="px-6 py-6 space-y-4">
               {navItems.map((item) => (
                 <button

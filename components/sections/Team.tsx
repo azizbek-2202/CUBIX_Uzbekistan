@@ -8,7 +8,7 @@ import direktor from "@/public/img/Direktor.jpg"
 import fullStack from "@/public/img/FullStack.jpg"
 import designer from "@/public/img/Azimjon.jpg"
 import backend from "@/public/img/saidnur.jpg"
-// import ux from "@/public/img/Ux.jpg"
+import ux from "@/public/img/hakimov.jpg"
 import projectManager from "@/public/img/shohruh.jpg"
 
 export default function Team() {
@@ -79,15 +79,14 @@ export default function Team() {
       },
     },
     {
-      name: "Madina Abdullaeva",
+      name: "Jahongir Muhammedov",
       position: t("uxDeveloper"),
-      // image: ux ? ux : "/placeholder.svg?height=300&width=300",
-      image: "/placeholder.svg?height=300&width=300",
+      image: ux ? ux : "/placeholder.svg?height=300&width=300",
       bio: t("uxDeveloperBio"),
       social: {
-        linkedin: "https://www.linkedin.com/in/madina-abdullaeva",
-        facebook: "https://twitter.com/madina_abdullaeva",
-        github: "https://github.com/madina-abdullaeva",
+        linkedin: "https://www.linkedin.com/in/jahongir-muhammedov-8b6a1b1b2/",
+        facebook: "https://twitter.com/jahongir_muhammedov",
+        github: "https://github.com/jahongir-muhammedov",
       },
     },
     {
